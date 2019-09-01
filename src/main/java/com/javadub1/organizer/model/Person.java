@@ -26,4 +26,6 @@ public class Person implements IBaseEntity {
 
     @ManyToOne()
     private Invitation invitation;
+
+
 }

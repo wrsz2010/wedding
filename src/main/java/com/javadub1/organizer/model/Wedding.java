@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
@@ -18,7 +17,9 @@ public class Wedding implements IBaseEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @OneToOne
     private Person bride;
+    @OneToOne
     private Person groom;
 
     private LocalDate weddingDate;
@@ -31,4 +32,5 @@ public class Wedding implements IBaseEntity {
 
     @OneToMany(mappedBy = "wedding")
     private Set<Invitation> invitations;
+
 }
